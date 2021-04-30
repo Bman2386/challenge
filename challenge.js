@@ -1,4 +1,4 @@
-console.log('hello');
+
 // ROT-N 0-25
 // abc -> ROT-1 -> bcd
 // abc -> ROT-2 -> cde
@@ -24,7 +24,7 @@ function rotationSets(array){
     if (array[j] && isRotationMatch(array[i], array[j]) && i !== j){
       setOfMatches.add(array[i]);
       setOfMatches.add(array[j]);
-      // answerArray.splice(array[j], 1) //remove array[i] & array[j]
+    
       array.splice(j, 1);
       i = 0;
       j = 1;
@@ -40,7 +40,7 @@ function rotationSets(array){
     } 
    
     j++
-    // i++
+  
   }
   return answerArray
 }
@@ -89,11 +89,10 @@ const isRotationMatch = (string1, string2) => {
   return true
 }
 
+// test cases
 console.log(rotationSets(["abbc", "bccd", "cat", "zaab", "yell", "bzs", "catch"]));
 console.log(rotationSets(['aaa', 'bbb', 'c']));
 console.log(rotationSets([]));
 console.log(rotationSets(['eee', 'zzzzzzzzzz', 'BBB', 'd', 'zz', 'AAAA', 'CCC', 'dd']));
 
                                   
-// console.log(isRotationMatch('cat', 'bzs'))
-// console.log(isRotationMatch('d', 'zz'))
